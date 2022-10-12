@@ -1,10 +1,10 @@
 import React from "react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { EmployeesContext } from "./Employees";
 
 function EmployeeList() {
   const { newEmployee, clickHandler } = useContext(EmployeesContext);
-  //console.log("Emp Id", newEmployee);
+
   return (
     <>
       {newEmployee.map((employee) => {
@@ -25,7 +25,6 @@ function EmployeeList() {
           </div>
         );
       })}
-      ;
     </>
   );
 }

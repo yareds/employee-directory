@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -12,7 +11,8 @@ const StyledHeader = styled.header`
   font-weight: bold;
   font-size: 16px;
   height: 3em ${(props) => props.height};
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: left;
 `;
 
 export default function Header({
@@ -21,6 +21,7 @@ export default function Header({
   backgroundColor,
   width,
   height,
+  icons,
 }) {
   return (
     <>
@@ -30,13 +31,7 @@ export default function Header({
         headerColor={borderColor}
         backgroundColor={backgroundColor}
       >
-        <KeyboardArrowLeft
-          style={{
-            fontSize: "35px",
-            color: "rgb(52, 147, 211)",
-            marginLeft: ".5em",
-          }}
-        />
+        {icons}
         {headerValue}
       </StyledHeader>
     </>

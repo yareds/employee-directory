@@ -4,25 +4,33 @@ import EmployeeList from "./EmployeeList";
 import Header from "./Header";
 import { EmployeesProvider } from "./Employees";
 import EmployeeProfile from "./EmployeeProfile";
-import { Banner, StaticBanner } from "material-ui-banner";
+import NavBar from "./NavBar";
 import Search from "./Search";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
 
 export default function App() {
   return (
     <React.Fragment>
       <EmployeesProvider>
-        <header>
-          <b>Employee Management Portal</b>
+        <header
+          style={{
+            height: "155px",
+            fontFamily: "Verdana ",
+            fontWeight: "bold",
+            fontSize: "50",
+          }}
+        >
+          <NavBar />
         </header>
-
+        <div className="form">
+          <div></div>
+        </div>
         <div className="app">
           <div className="homePage">
             <div>
               <Header headerValue="Employee Directory" />
             </div>
-            <div>
-              <Search />
-            </div>
+            <Search />
             <div className="employeeListWrapper ">
               <div className="employeeList ">
                 <EmployeeList />
@@ -31,7 +39,19 @@ export default function App() {
           </div>
           <div className="employeePage">
             <div>
-              <Header headerValue="Employees" />
+              <Header
+                headerValue="Employees"
+                icons={
+                  <KeyboardArrowLeft
+                    style={{
+                      fontSize: "48px",
+                      color: "rgb(52, 147, 211)",
+                      marginLeft: "-150px",
+                      marginTop: "-10px",
+                    }}
+                  />
+                }
+              />
             </div>
             <div className="employeeProfile">
               <EmployeeProfile />
